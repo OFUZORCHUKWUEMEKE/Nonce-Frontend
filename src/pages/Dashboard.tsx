@@ -1,10 +1,13 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 type Props = {}
 
 const Dashboard = (props: Props) => {
     return (
-        <div>Dashboard</div>
+        <Layout>
+            
+        </Layout>
     )
 }
 
