@@ -1,14 +1,14 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import DashboardLayout from '../components/Layout'
 
 type Props = {}
 
 const Dashboard = (props: Props) => {
     return (
-        <Layout>
-            
-        </Layout>
+      <DashboardLayout>
+        <div></div>
+      </DashboardLayout>
     )
 }
 
-export default Dashboard
+export default Dashboard;

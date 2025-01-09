@@ -1,11 +1,19 @@
 import React from 'react'
+import Sidebar from './Sidebar';
 
-type Props = {}
-
-const Layout = (props: Props) => {
+const DashboardLayout = ({
+    children,
+}: { children: React.ReactNode }) => {
     return (
-        <div>Layout</div>
+        <main className='w-[100vw] flex'>
+            <div className='w-[20%] hidden md:block'>
+                <Sidebar />
+            </div>
+            <main className='md:w-[80%] w-full'>
+                {children}
+            </main>
+        </main>
     )
 }
 
-export default Layout
+export default DashboardLayout;
