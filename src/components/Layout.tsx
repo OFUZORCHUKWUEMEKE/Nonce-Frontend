@@ -5,7 +5,7 @@ const DashboardLayout = ({
     children,
 }: { children: React.ReactNode }) => {
     return (
-        <main className='w-[100vw] flex'>
+        <main className='max-w-[100vw] flex'>
             <div className='w-[20%] hidden md:block'>
                 <Sidebar />
             </div>
