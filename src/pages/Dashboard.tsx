@@ -17,11 +17,11 @@ const Dashboard = (props: Props) => {
         </div>
         <div className='py-10'>
           <div className='flex items-center space-x-6'>
-            <div className='bg-[#D0E2E3] space-y-3 py-4 px-3 w-[280.52px] h-[190.4px] rounded-md'>
+            <div className='bg-[#D0E2E3] space-y-3 py-4 px-3 w-[280.52px] h-[190.4px] rounded-xl cursor-pointer'>
               <h2>Total Savings</h2>
               <h1 className='text-[50px] font-bold'>$2,000</h1>
             </div>
-            <div className='bg-[#F5F3EC] space-y-3 py-4 px-3 w-[280.52px] h-[190.4px] rounded-md'>
+            <div className='bg-[#F5F3EC] space-y-3 py-4 px-3 w-[280.52px] h-[190.4px] rounded-xl cursor-pointer'>
               <h2>Number of Savings</h2>
               <h1 className='text-[50px] font-bold'>4</h1>
             </div>
