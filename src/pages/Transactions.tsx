@@ -1,7 +1,7 @@
-import React from 'react'
-import DashboardLayout from '../components/Layout'
-import { AccordionSummary, IconButton } from '@mui/material'
-
+import React from 'react';
+import DashboardLayout from '../components/Layout';
+import { IconButton } from '@mui/material';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 type Props = {}
 
 const Transactions = (props: Props) => {
@@ -19,9 +19,9 @@ const Transactions = (props: Props) => {
                     <div className='py-3 space-y-8'>
                         <div className='flex space-x-2 items-center justify-between cursor-pointer'>
                             <div className='flex space-x-2 items-center'>
-                                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
+                                <div className='w-[48.14px] h-[48.14px] flex items-center justify-center rounded-full bg-[#E9E5E5]'>
                                     <IconButton>
-                                        <AccordionSummary />
+                                        <ArrowUpwardIcon className="text-[#2BD92B]" />
                                     </IconButton>
                                 </div>
                                 <div className='space-y-2'>
@@ -41,9 +41,9 @@ const Transactions = (props: Props) => {
                         </div>
                         <div className='flex space-x-2 items-center justify-between cursor-pointer'>
                             <div className='flex space-x-2 items-center'>
-                                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
+                                <div className='w-[48.14px] h-[48.14px] flex items-center justify-center rounded-full bg-[#E9E5E5]'>
                                     <IconButton>
-                                        <AccordionSummary />
+                                        <ArrowUpwardIcon className="text-[#2BD92B]" />
                                     </IconButton>
                                 </div>
                                 <div className='space-y-2'>
@@ -63,9 +63,9 @@ const Transactions = (props: Props) => {
                         </div>
                         <div className='flex space-x-2 items-center justify-between cursor-pointer'>
                             <div className='flex space-x-2 items-center'>
-                                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
+                                <div className='w-[48.14px] h-[48.14px] flex items-center justify-center rounded-full bg-[#E9E5E5]'>
                                     <IconButton>
-                                        <AccordionSummary />
+                                        <ArrowUpwardIcon className="text-[#2BD92B]" />
                                     </IconButton>
                                 </div>
                                 <div className='space-y-2'>
@@ -85,9 +85,9 @@ const Transactions = (props: Props) => {
                         </div>
                         <div className='flex space-x-2 items-center justify-between cursor-pointer'>
                             <div className='flex space-x-2 items-center'>
-                                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
+                                <div className='w-[48.14px] h-[48.14px] flex items-center justify-center rounded-full bg-[#E9E5E5]'>
                                     <IconButton>
-                                        <AccordionSummary />
+                                        <ArrowUpwardIcon className="text-[#2BD92B]" />
                                     </IconButton>
                                 </div>
                                 <div className='space-y-2'>
@@ -107,9 +107,9 @@ const Transactions = (props: Props) => {
                         </div>
                         <div className='flex space-x-2 items-center justify-between cursor-pointer'>
                             <div className='flex space-x-2 items-center'>
-                                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
+                                <div className='w-[48.14px] h-[48.14px] rounded-full flex items-center justify-center bg-[#E9E5E5]'>
                                     <IconButton>
-                                        <AccordionSummary />
+                                        <ArrowUpwardIcon className="text-[#2BD92B]" />
                                     </IconButton>
                                 </div>
                                 <div className='space-y-2'>
@@ -129,21 +129,21 @@ const Transactions = (props: Props) => {
                         </div>
                     </div>
                 </div>
-                {/* <div className='py-4 flex items-center space-x-5'>
-                    <div className='w-40 h-40 text-white rounded-full bg-[#FC4B37]'>
-                       1
+                <div className='py-4 flex items-center justify-end space-x-5'>
+                    <div className='w-8 h-8 cursor-pointer text-white flex justify-center items-center rounded-full bg-[#FC4B37]'>
+                        1
                     </div>
-                    <div className='w-40 h-40 text-[#FC4B37] rounded-full bg-white border border-[#FC4B37]'>
-                       2
+                    <div className='w-8 h-8 cursor-pointer text-[#FC4B37] flex justify-center items-center rounded-full bg-white border border-[#FC4B37]'>
+                        2
                     </div>
-                    <div className='w-40 h-40 text-[#FC4B37] rounded-full bg-white border border-[#FC4B37]'>
-                       3
+                    <div className='w-8 h-8 cursor-pointer text-[#FC4B37] flex justify-center items-center rounded-full bg-white border border-[#FC4B37]'>
+                        3
                     </div>
-                    <div className='w-40 h-40 text-[#FC4B37] rounded-full bg-white border border-[#FC4B37]'>
-                       4
+                    <div className='w-8 h-8 cursor-pointer text-[#FC4B37] flex justify-center items-center rounded-full bg-white border border-[#FC4B37]'>
+                        4
                     </div>
 
-                </div> */}
+                </div>
             </div>
         </DashboardLayout>
     )
