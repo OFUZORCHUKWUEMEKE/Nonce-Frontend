@@ -11,7 +11,7 @@ const DashboardLayout = ({
             <SidebarProvider>
                 <div className='flex w-full'>
                     <AppSidebar />
-                    <main className='flex flex-1 bg-black'>
+                    <main className='flex flex-1 bg-[#09090b]'>
                         {children}
                     </main>
                 </div>

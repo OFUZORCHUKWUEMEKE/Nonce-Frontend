@@ -82,7 +82,7 @@ const data = {
     },
     {
       name: "Savings",
-      url: "#",
+      url: "/savings",
       icon: PieChart,
     },
     {
