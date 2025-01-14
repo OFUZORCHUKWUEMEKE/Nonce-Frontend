@@ -8,9 +8,9 @@ type Props = {}
 const Dashboard = (props: Props) => {
   return (
     <DashboardLayout>
-      <div className='px-20 py-12'>
+      <div className='px-10 py-10'>
         <div className='flex justify-between items-start'>
-          {/* <SidebarTrigger/> */}
+          <SidebarTrigger className='mt-2' />
           <div className='space-y-2'>
             <h2 className='text-[30px] font-bold'>Welcome Back Ofuzor</h2>
             <p className='text-[#C2C2C2] font-light'>December 2024</p>
