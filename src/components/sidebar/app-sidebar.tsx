@@ -77,19 +77,20 @@ const data = {
   projects: [
     {
       name: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: Frame,
     },
     {
-      name: "Savings",
-      url: "/savings",
-      icon: PieChart,
-    },
-    {
       name: "Transactions",
-      url: "#",
+      url: "/transaction",
       icon: Map,
     },
+    {
+      name: "Savings",
+      url: "/saving",
+      icon: PieChart,
+    },
+   
   ],
 }
 

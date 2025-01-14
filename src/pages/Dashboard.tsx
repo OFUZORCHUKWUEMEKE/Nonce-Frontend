@@ -4,6 +4,8 @@ import { AccordionSummary, IconButton } from '@mui/material'
 import { SidebarTrigger } from '@/components/ui/sidebar'
 import { Charts } from '@/components/charts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import TransactionCard from '@/components/TransactionsCard'
+import DashboardCard from '@/components/DashboardCard'
 
 type Props = {}
 
@@ -24,28 +26,10 @@ const Dashboard = (props: Props) => {
           <button className='bg-white py-3 px-6 md:block hidden rounded-lg text-black font-medium'>Create Savings</button>
         </div>
         <div className='py-10'>
-          <div className='flex items-center space-x-6'>
-            <div className='border-none bg-black space-y-3 py-4 px-3 w-[280.52px] h-[140.4px] rounded-xl cursor-pointer'>
-              <h2 className='text-white font-bold'>Total Savings</h2>
-              <h1 className='text-[30px] font-bold text-white'>$2,000</h1>
-              <div className='py-1'>
-                <p className='text-[#C2C2C2] text-[14px]'>10.1% since last year</p>
-              </div>
-            </div>
-            <div className='border-none bg-black space-y-3 py-4 px-3 w-[280.52px] h-[140.4px] rounded-xl cursor-pointer'>
-              <h2 className='text-white font-bold'>Number of Savings</h2>
-              <h1 className='text-[30px] font-bold text-white'>4</h1>
-              <div className='py-1'>
-                <p className='text-[#C2C2C2] text-[14px]'>6.1% since last year</p>
-              </div>
-            </div>
-            <div className='border-none bg-black space-y-3 py-4 px-3 w-[280.52px] h-[140.4px] rounded-xl cursor-pointer'>
-              <h2 className='text-white font-bold'>Active Savings</h2>
-              <h1 className='text-[30px] font-bold text-white'>+25</h1>
-              <div className='py-1'>
-                <p className='text-[#C2C2C2] text-[14px]'>6.1% since last week</p>
-              </div>
-            </div>
+          <div className='grid grid-cols-3 gap-6 items-center space-x-6'>
+            <DashboardCard name='Total Savings' description='10.1% since last year' number={2000}/>
+            <DashboardCard name="Number of Savings" description='6.1% since last year' number={4}/>
+            <DashboardCard name='Active Savings' description='61% since last week' number={25}/>
           </div>
         </div>
         <div className='py-2'>
@@ -54,57 +38,7 @@ const Dashboard = (props: Props) => {
               <Charts />
             </div>
             <div className='flex-[40%]'>
-              <Card className='bg-black border-none'>
-                <CardHeader className='text-white'>
-                  <CardTitle>Recent Transactions</CardTitle>
-                  <CardDescription>You have 100+ transactions since last month</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className='space-y-6'>
-                    <div className='flex justify-between items-center cursor-pointer'>
-                      <div>
-                        <h2 className='text-white text-xl font-bold'>Daily Savings</h2>
-                        <p className='text-white text-sm'>0x39820x0awedc343dd</p>
-                      </div>
-                      <div>
-                        <h2 className='text-[#C6C2C2] text-[18px] font-bold'>-$1,200</h2>
-                        <p className='font-light text-sm text-right text-[#C6C2C2]'>USDT(sol)</p>
-                      </div>
-
-                    </div>
-                    <div className='flex justify-between items-center cursor-pointer'>
-                      <div>
-                        <h2 className='text-white text-xl font-bold'>Daily Savings</h2>
-                        <p className='text-white text-sm'>0x39820x0awedc343dd</p>
-                      </div>
-                      <div>
-                        <h2 className='text-[#C6C2C2] text-[18px] font-bold'>-$1,200</h2>
-                        <p className='font-light text-sm text-right text-[#C6C2C2]'>ETH(base)</p>
-                      </div>
-                    </div>
-                    <div className='flex justify-between items-center cursor-pointer'>
-                      <div>
-                        <h2 className='text-white text-xl font-bold'>House savings</h2>
-                        <p className='text-white text-sm'>0x39820x0awedc343dd</p>
-                      </div>
-                      <div>
-                        <h2 className='text-[#C6C2C2] text-[18px] font-bold'>-$1,200</h2>
-                        <p className='font-light text-sm text-right text-[#C6C2C2]'>USDT(sui)</p>
-                      </div>
-                    </div>
-                    <div className='flex justify-between items-center cursor-pointer'>
-                      <div>
-                        <h2 className='text-white text-xl font-bold'>Monthly Savings</h2>
-                        <p className='text-white text-sm'>0x39820x0awedc343dd</p>
-                      </div>
-                      <div>
-                        <h2 className='text-[#C6C2C2] text-[18px] font-bold'>-$1,200</h2>
-                        <p className='font-light text-sm text-right text-[#C6C2C2]'>USDT(sui)</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <TransactionCard name="Recent Transactions" description='You have 100+ transactions since last month' />
             </div>
           </div>
 
