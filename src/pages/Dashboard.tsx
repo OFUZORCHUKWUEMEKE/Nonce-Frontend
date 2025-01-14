@@ -1,6 +1,7 @@
 import React from 'react'
 import DashboardLayout from '../components/Layout'
 import { AccordionSummary, IconButton } from '@mui/material'
+import { SidebarTrigger } from '@/components/ui/sidebar'
 
 type Props = {}
 
@@ -9,6 +10,7 @@ const Dashboard = (props: Props) => {
     <DashboardLayout>
       <div className='px-20 py-12'>
         <div className='flex justify-between items-start'>
+          {/* <SidebarTrigger/> */}
           <div className='space-y-2'>
             <h2 className='text-[30px] font-bold'>Welcome Back Ofuzor</h2>
             <p className='text-[#C2C2C2] font-light'>December 2024</p>
