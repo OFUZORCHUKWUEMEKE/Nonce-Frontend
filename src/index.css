@@ -92,6 +92,6 @@ body {
 
   body {
     /* @apply bg-background text-foreground; */
-    width: 100%;
+    /* width: 100%; */
   }
 }

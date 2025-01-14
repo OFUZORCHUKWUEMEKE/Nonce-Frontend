@@ -7,15 +7,18 @@ const DashboardLayout = ({
     children,
 }: { children: React.ReactNode }) => {
     return (
-        <SidebarProvider>
-            <div className='flex w-full'>
-                <AppSidebar />
-                <main className='flex flex-1 w-full'>
-                    {children}
-                </main>
-            </div>
+        <div className='min-w-full'>
+            <SidebarProvider>
+                <div className='flex w-full'>
+                    <AppSidebar />
+                    <main className='flex flex-1 bg-black'>
+                        {children}
+                    </main>
+                </div>
 
-        </SidebarProvider>
+            </SidebarProvider>
+        </div>
+
     )
 }
 

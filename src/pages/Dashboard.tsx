@@ -8,24 +8,41 @@ type Props = {}
 const Dashboard = (props: Props) => {
   return (
     <DashboardLayout>
-      <div className='px-10 py-10'>
+      <div className='px-10 py-10 w-full'>
         <div className='flex justify-between items-start'>
-          <SidebarTrigger className='mt-2' />
-          <div className='space-y-2'>
-            <h2 className='text-[30px] font-bold'>Welcome Back Ofuzor</h2>
-            <p className='text-[#C2C2C2] font-light'>December 2024</p>
+
+          <div className='space-x-2 items-start flex'>
+            <SidebarTrigger className='mt-2 text-white' />
+            <div className='space-y-1'>
+              <h2 className='text-[30px] text-white font-bold'>Welcome Back Ofuzor</h2>
+              <p className='text-[#C2C2C2] font-light'>December 2024</p>
+            </div>
           </div>
-          <button className='bg-[#FC4B37] py-3 px-6 md:block hidden text-white font-medium'>Get Started</button>
+
+          <button className='bg-white py-3 px-6 md:block hidden rounded-lg text-black font-medium'>Get Started</button>
         </div>
         <div className='py-10'>
           <div className='flex items-center space-x-6'>
-            <div className='bg-[#D0E2E3] space-y-3 py-4 px-3 w-[280.52px] h-[190.4px] rounded-xl cursor-pointer'>
-              <h2>Total Savings</h2>
-              <h1 className='text-[50px] font-bold'>$2,000</h1>
+            <div className='border border-white space-y-3 py-4 px-3 w-[280.52px] h-[140.4px] rounded-xl cursor-pointer'>
+              <h2 className='text-white font-bold'>Total Savings</h2>
+              <h1 className='text-[30px] font-bold text-white'>$2,000</h1>
+              <div className='py-1'>
+                <p className='text-[#C2C2C2] text-[14px]'>10.1% since last year</p>
+              </div>
             </div>
-            <div className='bg-[#F5F3EC] space-y-3 py-4 px-3 w-[280.52px] h-[190.4px] rounded-xl cursor-pointer'>
-              <h2>Number of Savings</h2>
-              <h1 className='text-[50px] font-bold'>4</h1>
+            <div className='border border-white space-y-3 py-4 px-3 w-[280.52px] h-[140.4px] rounded-xl cursor-pointer'>
+              <h2 className='text-white font-bold'>Number of Savings</h2>
+              <h1 className='text-[30px] font-bold text-white'>4</h1>
+              <div className='py-1'>
+                <p className='text-[#C2C2C2] text-[14px]'>6.1% since last year</p>
+              </div>
+            </div>
+            <div className='border border-white space-y-3 py-4 px-3 w-[280.52px] h-[140.4px] rounded-xl cursor-pointer'>
+              <h2 className='text-white font-bold'>Active Savings</h2>
+              <h1 className='text-[30px] font-bold text-white'>+25</h1>
+              <div className='py-1'>
+                <p className='text-[#C2C2C2] text-[14px]'>6.1% since last week</p>
+              </div>
             </div>
           </div>
         </div>
