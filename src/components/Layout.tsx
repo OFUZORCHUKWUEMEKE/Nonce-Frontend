@@ -8,12 +8,14 @@ const DashboardLayout = ({
 }: { children: React.ReactNode }) => {
     return (
         <SidebarProvider>
-            <AppSidebar />
-            <main>
-                {children}
-            </main>
-        </SidebarProvider>
+            <div className='flex w-full'>
+                <AppSidebar />
+                <main className='flex flex-1 w-full'>
+                    {children}
+                </main>
+            </div>
 
+        </SidebarProvider>
     )
 }
 

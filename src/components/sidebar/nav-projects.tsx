@@ -39,7 +39,7 @@ export function NavProjects({
       {/* <SidebarGroupLabel>Projects</SidebarGroupLabel> */}
       <SidebarMenu>
         {projects.map((item) => (
-          <SidebarMenuItem key={item.name} className="py-5">
+          <SidebarMenuItem key={item.name} className="py-3">
             <SidebarMenuButton asChild>
               <a href={item.url}>
                 <item.icon />
