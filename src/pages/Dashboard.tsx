@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import TransactionCard from '@/components/TransactionsCard'
 import DashboardCard from '@/components/DashboardCard'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Bell } from 'lucide-react';
+import { Bell, House, CarFront, Plane, ShoppingCart } from 'lucide-react';
 import BottomNavigation from '@/components/BottomNav'
 import { Separator } from '@/components/ui/separator'
 
@@ -15,6 +15,15 @@ import { Separator } from '@/components/ui/separator'
 type Props = {}
 
 const Dashboard = (props: Props) => {
+
+  const transactiondata = [
+    { name: 'New Home', date: "Wed,Sep 18 2025", price: "3000", other: "2 days left", icon: House },
+    { name: 'New Whip', date: "Thur, Feb 26 2025", price: "3000", other: "4 days left", icon: CarFront },
+    { name: 'Monthly', date: "Mon, Jan 1 2025", price: "4000", other: "7 days left", icon: ShoppingCart },
+    { name: 'Trip To Jamaica', date: "Fri, Mar 10 2025", price: "3500", other: "2 days left", icon: Plane },
+    { name: 'Monthly', date: "Mon, Jan 1 2025", price: "4000", other: "7 days left", icon: ShoppingCart },
+    { name: 'Trip To Jamaica', date: "Fri, Mar 10 2025", price: "3500", other: "2 days left", icon: Plane }
+  ]
   return (
     <DashboardLayout>
       <div className='px-10 py-10 w-full hidden md:block'>
@@ -48,7 +57,7 @@ const Dashboard = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className='py-4 px-6 w-full'>
+      <div className='py-4 px-6 w-full block md:hidden'>
         <div className='flex justify-between items-center'>
           <div className='flex items-center space-x-1'>
             <Avatar>
@@ -77,6 +86,31 @@ const Dashboard = (props: Props) => {
           </div>
           <div className='py-2'>
             <Charts />
+            <div className='py-2'>
+              <div className='flex justify-between items-center'>
+                <h2 className="text-white">History</h2>
+                <h2 className='text-white'>View all</h2>
+              </div>
+              <div className='pb-8'>
+                {transactiondata.map(({ name, date, price, other, icon: Icon }) => (
+                  <div className='py-2 flex justify-between items-center'>
+                    <div className='flex items-center space-x-2'>
+                      <div className='p-2 bg-[#343434] rounded-full'>
+                        <Icon size={28} color='white' />
+                      </div>
+                      <div className='py-1'>
+                        <h2 className='text-white font-medium'>{name}</h2>
+                        <p className='text-[#A8A8A8] text-sm text-light'>{date}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <h2 className='text-right font-medium text-white'>${price}</h2>
+                      <h2 className='text-right font-medium text-[#A8A8A8] text-sm'>${other}</h2>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <BottomNavigation />
