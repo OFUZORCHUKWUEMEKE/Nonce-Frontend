@@ -6,13 +6,18 @@ import { Charts } from '@/components/charts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import TransactionCard from '@/components/TransactionsCard'
 import DashboardCard from '@/components/DashboardCard'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Bell } from 'lucide-react';
+import BottomNavigation from '@/components/BottomNav'
+import { Separator } from '@/components/ui/separator'
+
 
 type Props = {}
 
 const Dashboard = (props: Props) => {
   return (
     <DashboardLayout>
-      <div className='px-10 py-10 w-full'>
+      <div className='px-10 py-10 w-full hidden md:block'>
         <div className='flex justify-between items-start'>
 
           <div className='space-x-2 items-start flex'>
@@ -27,9 +32,9 @@ const Dashboard = (props: Props) => {
         </div>
         <div className='py-10'>
           <div className='grid grid-cols-3 gap-6 items-center space-x-6'>
-            <DashboardCard name='Total Savings' description='10.1% since last year' number={2000}/>
-            <DashboardCard name="Number of Savings" description='6.1% since last year' number={4}/>
-            <DashboardCard name='Active Savings' description='61% since last week' number={25}/>
+            <DashboardCard name='Total Savings' description='10.1% since last year' number={2000} />
+            <DashboardCard name="Number of Savings" description='6.1% since last year' number={4} />
+            <DashboardCard name='Active Savings' description='61% since last week' number={25} />
           </div>
         </div>
         <div className='py-2'>
@@ -41,120 +46,40 @@ const Dashboard = (props: Props) => {
               <TransactionCard name="Recent Transactions" description='You have 100+ transactions since last month' />
             </div>
           </div>
-
-          {/* <div className='py-3 space-y-8'>
-            <div className='flex space-x-2 items-center justify-between cursor-pointer'>
-              <div className='flex space-x-2 items-center'>
-                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
-                  <IconButton>
-                    <AccordionSummary />
-                  </IconButton>
-                </div>
-                <div className='space-y-2'>
-                  <h2 className='font-bold text-xl'>0x3D89068s...</h2>
-                  <p className='font-light text-[#A7A2A2]'>Dec 10 , 2024  19:32</p>
-                </div>
-              </div>
-              <div>
-                <p>200 USDC</p>
-              </div>
-              <div>
-                <h2 className='font-bold text-[#FC4B37]'>PRICE LOCKED</h2>
-              </div>
-              <div>
-                <button className='bg-[#D6FFD4] rounded-[145.35px] text-[#39C277] py-1 px-3'>success</button>
-              </div>
-            </div>
-            <div className='flex space-x-2 items-center justify-between cursor-pointer'>
-              <div className='flex space-x-2 items-center'>
-                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
-                  <IconButton>
-                    <AccordionSummary />
-                  </IconButton>
-                </div>
-                <div className='space-y-2'>
-                  <h2 className='font-bold text-xl'>0x3D89068s...</h2>
-                  <p className='font-light text-[#A7A2A2]'>Dec 10 , 2024  19:32</p>
-                </div>
-              </div>
-              <div>
-                <p>200 USDC</p>
-              </div>
-              <div>
-                <h2 className='font-bold text-[#FC4B37]'>PRICE LOCKED</h2>
-              </div>
-              <div>
-                <button className='bg-[#D6FFD4] rounded-[145.35px] text-[#39C277] py-1 px-3'>success</button>
-              </div>
-            </div>
-            <div className='flex space-x-2 items-center justify-between cursor-pointer'>
-              <div className='flex space-x-2 items-center'>
-                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
-                  <IconButton>
-                    <AccordionSummary />
-                  </IconButton>
-                </div>
-                <div className='space-y-2'>
-                  <h2 className='font-bold text-xl'>0x3D89068s...</h2>
-                  <p className='font-light text-[#A7A2A2]'>Dec 10 , 2024  19:32</p>
-                </div>
-              </div>
-              <div>
-                <p>200 USDC</p>
-              </div>
-              <div>
-                <h2 className='font-bold text-[#FC4B37]'>PRICE LOCKED</h2>
-              </div>
-              <div>
-                <button className='bg-[#D6FFD4] rounded-[145.35px] text-[#39C277] py-1 px-3'>success</button>
-              </div>
-            </div>
-            <div className='flex space-x-2 items-center justify-between cursor-pointer'>
-              <div className='flex space-x-2 items-center'>
-                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
-                  <IconButton>
-                    <AccordionSummary />
-                  </IconButton>
-                </div>
-                <div className='space-y-2'>
-                  <h2 className='font-bold text-xl'>0x3D89068s...</h2>
-                  <p className='font-light text-[#A7A2A2]'>Dec 10 , 2024  19:32</p>
-                </div>
-              </div>
-              <div>
-                <p>200 USDC</p>
-              </div>
-              <div>
-                <h2 className='font-bold text-[#FC4B37]'>PRICE LOCKED</h2>
-              </div>
-              <div>
-                <button className='bg-[#D6FFD4] rounded-[145.35px] text-[#39C277] py-1 px-3'>success</button>
-              </div>
-            </div>
-            <div className='flex space-x-2 items-center justify-between cursor-pointer'>
-              <div className='flex space-x-2 items-center'>
-                <div className='w-[58.14px] h-[58.14px] rounded-full bg-[#E9E5E5]'>
-                  <IconButton>
-                    <AccordionSummary />
-                  </IconButton>
-                </div>
-                <div className='space-y-2'>
-                  <h2 className='font-bold text-xl'>0x3D89068s...</h2>
-                  <p className='font-light text-[#A7A2A2]'>Dec 10 , 2024  19:32</p>
-                </div>
-              </div>
-              <div>
-                <p>200 USDC</p>
-              </div>
-              <div>
-                <h2 className='font-bold text-[#FC4B37]'>PRICE LOCKED</h2>
-              </div>
-              <div>
-                <button className='bg-[#D6FFD4] rounded-[145.35px] text-[#39C277] py-1 px-3'>success</button>
-              </div>
-            </div>
-          </div> */}
         </div>
+      </div>
+      <div className='py-4 px-6 w-full'>
+        <div className='flex justify-between items-center'>
+          <div className='flex items-center space-x-1'>
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>E0</AvatarFallback>
+            </Avatar>
+            <div className=' text-white'>
+              <h3 className='font-bold'>Ofuzor Emeke</h3>
+              <p className='text-sm'>0Xhsh28822...</p>
+            </div>
+          </div>
+          <div className='cursor-pointer'>
+            <Bell size={28} color='white' />
+          </div>
+        </div>
+        <div className='py-2'>
+          <Separator />
+        </div>
+        <div className='py-2'>
+          <div className=''>
+            <p className='text-white text-sm'>Your balance is <span className="text-[#25DB25]">+10.2%</span></p>
+            <div className='py-2'>
+              <h2 className='text-[45px] font-bold text-white'>$ 8,350.00</h2>
+              <p className='text-white text-sm'>You have saved <span className="text-[#FC4B37]">2500</span> this month</p>
+            </div>
+          </div>
+          <div className='py-2'>
+            <Charts />
+          </div>
+        </div>
+        <BottomNavigation />
       </div>
     </DashboardLayout>
   )
