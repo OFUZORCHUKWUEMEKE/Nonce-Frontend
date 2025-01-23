@@ -10,11 +10,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Bell, House, CarFront, Plane, ShoppingCart } from 'lucide-react';
 import BottomNavigation from '@/components/BottomNav'
 import { Separator } from '@/components/ui/separator'
+import { useAppKitAccount } from '@reown/appkit/react'
 
 
 type Props = {}
 
 const Dashboard = (props: Props) => {
+  const { isConnected, address } = useAppKitAccount();
 
   const transactiondata = [
     { name: 'New Home', date: "Wed,Sep 18 2025", price: "3000", other: "2 days left", icon: House },
@@ -32,7 +34,7 @@ const Dashboard = (props: Props) => {
           <div className='space-x-2 items-start flex'>
             <SidebarTrigger className='mt-2 text-white' />
             <div className='space-y-1'>
-              <h2 className='text-[30px] text-white font-bold'>Welcome Back Ofuzor</h2>
+              <h2 className='text-[30px] text-white font-bold'>Welcome</h2>
               <p className='text-[#C2C2C2] font-light'>December 2024</p>
             </div>
           </div>
@@ -66,7 +68,7 @@ const Dashboard = (props: Props) => {
             </Avatar>
             <div className=' text-white'>
               <h3 className='font-bold'>Ofuzor Emeke</h3>
-              <p className='text-sm'>0Xhsh28822...</p>
+              <p className='text-sm'>{address}</p>
             </div>
           </div>
           <div className='cursor-pointer'>

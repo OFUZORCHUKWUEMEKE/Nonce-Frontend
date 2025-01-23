@@ -13,18 +13,20 @@ import {
 } from "lucide-react"
 
 import { NavMain } from "./nav-main"
-import { NavProjects } from "./nav-projects"
-import { NavUser } from "./nav-user"
-import { TeamSwitcher } from "./team-switcher"
+import { NavProjects } from "./nav-projects";
+import { NavUser } from "./nav-user";
+import { TeamSwitcher } from "./team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+import { useAppKitAccount } from "@reown/appkit/react";
 
 // This is sample data.
+// const { isConnected, address } = useAppKitAccount();
 const data = {
   user: {
     name: "Emeke Ofuzor",
@@ -90,7 +92,7 @@ const data = {
       url: "/saving",
       icon: PieChart,
     },
-   
+
   ],
 }
 

@@ -1,25 +1,49 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { createAppKit, useAppKitAccount } from '@reown/appkit/react'
+import { solana, solanaTestnet, solanaDevnet } from '@reown/appkit/networks'
+import { metadata, projectId, solanaWeb3JsAdapter } from '../config';
+import { Link, useNavigate } from 'react-router-dom';
+
+
+
+
 
 const Home = () => {
+    const { isConnected, address } = useAppKitAccount();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isConnected) {
+            navigate("/dashboard")
+        }
+    }, [isConnected])
     return (
         <>
             <div className='bg-[#FC4B37] md:min-h-screen w-full'>
                 <div className='py-4 text-white w-[85%] md:max-w-[1280px] mx-auto'>
                     <nav className='flex w-4/5 items-center mx-auto justify-between w-full'>
                         <h3 className='cursor-pointer'>Nonce</h3>
-                        <div className='md:flex hidden space-x-16'>
-                            <h3 className='cursor-pointer'>Home</h3>
-                            <h3 className='cursor-pointer'>Blog</h3>
-                            <h3 className='cursor-pointer'>About</h3>
-                            <h3 className='cursor-pointer'>Contact</h3>
-                        </div>
-                        <button className='bg-white py-3 px-6 rounded-[100px] md:block hidden text-black font-medium'>Get Started</button>
+                        {!isConnected ? (
+                            <div className='md:flex hidden space-x-16'>
+                                <h3 className='cursor-pointer'>Home</h3>
+                                <h3 className='cursor-pointer'>Blog</h3>
+                                <h3 className='cursor-pointer'>About</h3>
+                                <h3 className='cursor-pointer'>Contact</h3>
+                            </div>
+                        ) : (
+                            <Link to={"/dashboard"}>
+                                <h3 className='cursor-pointer'>Dashboard</h3>
+                            </Link>
+
+                        )}
+                        {/* <button className='bg-white py-3 px-6 rounded-[100px] md:block hidden text-black font-medium'>Get Started</button> */}
+                        <appkit-button />
                         <div className='md:hidden block'>
                             <IconButton>
                                 <MenuIcon fontSize='medium' className="text-white" />

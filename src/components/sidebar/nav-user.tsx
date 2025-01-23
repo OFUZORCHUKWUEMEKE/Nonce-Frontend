@@ -27,17 +27,28 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { useAppKitAccount, useDisconnect } from '@reown/appkit/react'
+import { useNavigate } from "react-router-dom"
 
 export function NavUser({
-  user,
+  user
 }: {
   user: {
     name: string
     email: string
-    avatar: string
-  }
+    avatar: string,
+  },
 }) {
   const { isMobile } = useSidebar()
+  const navigate = useNavigate()
+
+  const { disconnect } = useDisconnect();
+  // const { isConnected, address } = useAppKitAccount();
+
+  const handleClick = async () => {
+    await disconnect()
+    navigate("/")
+  }
 
   return (
     <SidebarMenu>
@@ -96,7 +107,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleClick}>
               <LogOut />
               Log out
             </DropdownMenuItem>
