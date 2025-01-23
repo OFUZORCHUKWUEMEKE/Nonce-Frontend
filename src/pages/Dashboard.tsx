@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DashboardLayout from '../components/Layout'
 import { AccordionSummary, IconButton } from '@mui/material'
 import { SidebarTrigger } from '@/components/ui/sidebar'
@@ -11,12 +11,18 @@ import { Bell, House, CarFront, Plane, ShoppingCart } from 'lucide-react';
 import BottomNavigation from '@/components/BottomNav'
 import { Separator } from '@/components/ui/separator'
 import { useAppKitAccount } from '@reown/appkit/react'
+import SavingsModal from '@/components/SavingsModal'
 
 
 type Props = {}
 
 const Dashboard = (props: Props) => {
   const { isConnected, address } = useAppKitAccount();
+  const [open, setOpen] = useState(false);
+
+  const openModal = () => {
+    setOpen(true)
+  }
 
   const transactiondata = [
     { name: 'New Home', date: "Wed,Sep 18 2025", price: "3000", other: "2 days left", icon: House },
@@ -26,6 +32,7 @@ const Dashboard = (props: Props) => {
     { name: 'Monthly', date: "Mon, Jan 1 2025", price: "4000", other: "7 days left", icon: ShoppingCart },
     { name: 'Trip To Jamaica', date: "Fri, Mar 10 2025", price: "3500", other: "2 days left", icon: Plane }
   ]
+
   return (
     <DashboardLayout>
       <div className='px-10 py-10 w-full hidden md:block'>
@@ -39,7 +46,7 @@ const Dashboard = (props: Props) => {
             </div>
           </div>
 
-          <button className='bg-white py-3 px-6 md:block hidden rounded-lg text-black font-medium'>Create Savings</button>
+          <button className='bg-white py-3 px-6 md:block hidden rounded-lg text-black font-medium' onClick={openModal}>Create Savings</button>
         </div>
         <div className='py-10'>
           <div className='grid grid-cols-3 gap-6 items-center space-x-6'>
@@ -117,6 +124,7 @@ const Dashboard = (props: Props) => {
         </div>
         <BottomNavigation />
       </div>
+      <SavingsModal open={open} setOpen={setOpen} />
     </DashboardLayout>
   )
 }

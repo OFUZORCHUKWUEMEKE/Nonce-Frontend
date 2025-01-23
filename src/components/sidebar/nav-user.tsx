@@ -43,7 +43,7 @@ export function NavUser({
   const navigate = useNavigate()
 
   const { disconnect } = useDisconnect();
-  // const { isConnected, address } = useAppKitAccount();
+  const { isConnected, address } = useAppKitAccount();
 
   const handleClick = async () => {
     await disconnect()
@@ -64,8 +64,8 @@ export function NavUser({
                 <AvatarFallback className="rounded-lg">CN</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">{user.name}</span>
-                <span className="truncate text-xs">{user.email}</span>
+                <span className="truncate font-semibold">{address}</span>
+                <span className="truncate text-xs">solana</span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
@@ -83,31 +83,31 @@ export function NavUser({
                   <AvatarFallback className="rounded-lg">EO</AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">{user.name}</span>
-                  <span className="truncate text-xs">{user.email}</span>
+                  <span className="truncate font-semibold">{address}</span>
+                  <span className="truncate text-xs">solana</span>
                 </div>
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
                 <Sparkles />
                 Upgrade to Pro
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
                 <BadgeCheck />
                 Account
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
                 <Bell />
                 Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={handleClick}>
+            <DropdownMenuItem onClick={handleClick} className="cursor-pointer">
               <LogOut />
               Log out
             </DropdownMenuItem>
