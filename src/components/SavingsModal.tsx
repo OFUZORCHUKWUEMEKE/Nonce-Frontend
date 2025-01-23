@@ -1,3 +1,4 @@
+import { ProfileForm } from "./Profileform"
 import {
     AlertDialog,
     AlertDialogAction,
@@ -20,13 +21,15 @@ const SavingsModal = ({ open, setOpen }: { open: boolean, setOpen: any }) => {
     return (
         <AlertDialog open={open}>
             <AlertDialogTrigger>Open</AlertDialogTrigger>
-            <AlertDialogContent>
+            <AlertDialogContent className="max-w-[400px] bg-black border-gray-50 border rounded-md">
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        This action cannot be undone. This will permanently delete your account
-                        and remove your data from our servers.
-                    </AlertDialogDescription>
+                    <AlertDialogTitle className="text-white">New Savings</AlertDialogTitle>
+                    <div className="">
+                        <p className="text-sm text-gray-400">Create a new savings</p>
+                        <div className="py-2">
+                            <ProfileForm />
+                        </div>
+                    </div>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel onClick={closeDialog}>Cancel</AlertDialogCancel>
@@ -34,7 +37,6 @@ const SavingsModal = ({ open, setOpen }: { open: boolean, setOpen: any }) => {
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
-
     )
 }
 
