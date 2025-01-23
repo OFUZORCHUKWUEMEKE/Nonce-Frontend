@@ -10,6 +10,7 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "./ui/alert-dialog"
+import { X } from 'lucide-react';
 
 // type setOpen = () => void;
 
@@ -20,10 +21,13 @@ const SavingsModal = ({ open, setOpen }: { open: boolean, setOpen: any }) => {
     }
     return (
         <AlertDialog open={open}>
-            <AlertDialogTrigger>Open</AlertDialogTrigger>
-            <AlertDialogContent className="max-w-[400px] bg-black border-gray-50 border rounded-md">
+            {/* <AlertDialogTrigger>Open</AlertDialogTrigger> */}
+            <AlertDialogContent className="max-w-[400px] rounded-md">
+                <div className="absolute top-7 right-6 cursor-pointer" onClick={closeDialog}>
+                    <X />
+                </div>
                 <AlertDialogHeader>
-                    <AlertDialogTitle className="text-white">New Savings</AlertDialogTitle>
+                    <AlertDialogTitle className="">New Savings</AlertDialogTitle>
                     <div className="">
                         <p className="text-sm text-gray-400">Create a new savings</p>
                         <div className="py-2">
@@ -31,10 +35,10 @@ const SavingsModal = ({ open, setOpen }: { open: boolean, setOpen: any }) => {
                         </div>
                     </div>
                 </AlertDialogHeader>
-                <AlertDialogFooter>
+                {/* <AlertDialogFooter>
                     <AlertDialogCancel onClick={closeDialog}>Cancel</AlertDialogCancel>
                     <AlertDialogAction>Continue</AlertDialogAction>
-                </AlertDialogFooter>
+                </AlertDialogFooter> */}
             </AlertDialogContent>
         </AlertDialog>
     )
